@@ -5,6 +5,7 @@ import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { useHistory, Link } from 'react-router-dom';
 import api from '../../services/api';
+import defaultAvatar from '../../assets/defaultAvatar.jpeg';
 
 import { useToast } from '../../hooks/Toast';
 
@@ -149,7 +150,9 @@ const Profile: React.FC = () => {
           onSubmit={handleSubmit}
         >
           <AvatarInput>
-            <img src={user.avatar_url} alt={user.name} />
+            <object data={user.avatar_url} type="image/png">
+              <img src={defaultAvatar} alt={user.name} />
+            </object>
             <label htmlFor="avatar">
               <FiCamera />
 

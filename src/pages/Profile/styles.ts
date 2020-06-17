@@ -64,10 +64,12 @@ export const AvatarInput = styled.div`
   margin-bottom: 32px;
   position: relative;
   align-self: center;
-  img {
-    width: 186px;
-    height: 186px;
-    border-radius: 50%;
+  object {
+    img {
+      width: 186px;
+      height: 186px;
+      border-radius: 50%;
+    }
   }
 
   label {
