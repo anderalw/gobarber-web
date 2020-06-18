@@ -18,7 +18,6 @@ import {
   Appointment,
   Calender,
 } from './styles';
-import defaultAvatar from '../../assets/defaultAvatar.jpeg';
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/Auth';
 import api from '../../services/api';
@@ -139,9 +138,7 @@ const Dashboard: React.FC = () => {
           <img src={logoImg} alt="GoBarber" />
 
           <Profile>
-            <object data={user.avatar_url} type="image/png">
-              <img src={defaultAvatar} alt={user.name} />
-            </object>
+            <img src={user.avatar_url} alt={user.name} />
 
             <div>
               <span>Bem-vindo,</span>
@@ -169,9 +166,10 @@ const Dashboard: React.FC = () => {
             <NextAppointment>
               <strong>Agendamento a seguir</strong>
               <div>
-                <object data={nextAppointment.user.avatar_url} type="image/png">
-                  <img src={defaultAvatar} alt={nextAppointment.user.name} />
-                </object>
+                <img
+                  src={nextAppointment.user.avatar_url}
+                  alt={nextAppointment.user.name}
+                />
                 <strong>{nextAppointment?.user.name}</strong>
                 <span>
                   <FiClock />
@@ -195,9 +193,10 @@ const Dashboard: React.FC = () => {
                   {appointment.hourFormatted}
                 </span>
                 <div>
-                  <object data={appointment.user.avatar_url} type="image/png">
-                    <img src={defaultAvatar} alt={appointment.user.name} />
-                  </object>
+                  <img
+                    src={appointment.user.avatar_url}
+                    alt={appointment.user.name}
+                  />
                   <strong>{appointment.user.name}</strong>
                 </div>
               </Appointment>
@@ -216,9 +215,11 @@ const Dashboard: React.FC = () => {
                   {appointment.hourFormatted}
                 </span>
                 <div>
-                  <object data={appointment.user.avatar_url} type="image/png">
-                    <img src={defaultAvatar} alt={appointment.user.name} />
-                  </object>
+                  <img
+                    src={appointment.user.avatar_url}
+                    alt={appointment.user.name}
+                  />
+
                   <strong>{appointment.user.name}</strong>
                 </div>
               </Appointment>
